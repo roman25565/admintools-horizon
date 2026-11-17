@@ -1,0 +1,24 @@
+# AdminTools: settings. Read when the server starts and again on /at reload.
+# A bad value is reported in the log and the default is used.
+
+# Operator level the /at commands need (ops.json). 2 = ordinary op, 4 = owner only.
+admin_level = 2
+
+[profiler]
+# /at prof without a number records this many seconds.
+default_seconds = 30
+# The longest /at prof may run.
+max_seconds = 600
+# Mob costs are timed in one server tick out of this many (1 = every tick, heavier).
+mob_sample_every = 4
+# A tick slower than this (milliseconds) is a "spike" in a profile.
+spike_ms = 60.0
+# Always-on spike log: every tick slower than this many milliseconds is written to the server
+# log with its slowest steps. 0 = off. /at spikes <ms> changes it until the next restart.
+spike_log_ms = 0.0
+# How many rows each table of a profile shows in chat (the file has them all).
+top = 8
+
+[structures]
+# How many nearest structures /at structures shows.
+max_results = 15

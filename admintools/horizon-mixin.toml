@@ -1,0 +1,20 @@
+# AdminTools for Horizon: the admin's toolbox and the shared core of our mods.
+#  - regions with mob rules (no natural spawn of monsters/animals/..., deny kinds);
+#  - profiler: tick steps, mob costs, spikes, plain-language reasons for lag;
+#  - nearest structures of the world's datapacks;
+#  - test helpers (/at near, /at clear, /at stress, /at mods).
+# Server side only: vanilla Java clients and Horizon clients need nothing.
+# Build it into a dedicated-server engine with `horizon-launcher native-build ... --trust-native-code`.
+[mod]
+id = "admintools"
+version = "0.1.0"
+
+# Only catalog hooks and Host helpers, but built and tested on this Nightly (the one in
+# update.bat), so it is pinned the same way as our other server mods.
+[compatibility]
+horizon_revision = "fdc87aecdbd116bf1e08adcd062fcbaea8c2e2ca"
+
+# Everything is a trait mod: commands, ticks, spawning, profiler hooks. Other mods reuse the
+# core with `[dependencies] admintools = "^0.1"` and `admintools::shared::...`.
+[api]
+path = "api"
